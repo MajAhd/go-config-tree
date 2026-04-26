@@ -1,3 +1,12 @@
+// Package goconfigtree is a lightweight, dependency-free Go package designed to manage
+// environment variables and configuration files for any Go project.
+//
+// It provides a clean workflow for configuration management by allowing you to define
+// your own schema using normal Go structs, initialize them with hardcoded default values,
+// and use .env files or system environment variables to dynamically override those defaults.
+//
+// It also provides strict validation through `required` tags, ensuring production
+// environments don't start up with missing configurations.
 package goconfigtree
 
 import (
@@ -10,9 +19,12 @@ import (
 )
 
 // Load reads optional .env files, loads them into the OS environment (if not already set),
-// and then maps all available environment variables to the provided struct pointer `v`
+// and then maps all available environment variables to the provided struct pointer v
 // based on the `env` struct tags.
-// Any existing values in `v` act as default values.
+// Any existing values in v act as default values.
+//
+// If a field has a `,required` option in its `env` tag and the environment variable
+// is missing while the struct field is at its zero-value, Load will return an error.
 func Load(v interface{}, envFiles ...string) error {
 	for _, filename := range envFiles {
 		if err := loadEnvFile(filename); err != nil {

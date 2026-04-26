@@ -1,5 +1,10 @@
 # go-config-tree
 
+[![Go Report Card](https://goreportcard.com/badge/github.com/MajAhd/go-config-tree)](https://goreportcard.com/report/github.com/MajAhd/go-config-tree)
+[![Go Reference](https://pkg.go.dev/badge/github.com/MajAhd/go-config-tree.svg)](https://pkg.go.dev/github.com/MajAhd/go-config-tree)
+[![Build Status](https://github.com/MajAhd/go-config-tree/actions/workflows/go.yml/badge.svg)](https://github.com/MajAhd/go-config-tree/actions)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
 `go-config-tree` is a lightweight, dependency-free Go package designed to manage environment variables and configuration files for any Go project.
 
 It provides a clean workflow for configuration management:
